@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Michael Fonseca · Professor de Inglês em BH</title>
+<meta name="description" content="Professor particular de inglês em Belo Horizonte e Contagem. Do zero ao avançado, foco em conversação real. 31 avaliações 5 estrelas. Aula experimental gratuita.">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-145-260-7068"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-145-260-7068');
+</script>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --ink:#0e0d0b;
+  --ink2:#1a1814;
+  --ink3:#2a2820;
+  --cream:#f2ede4;
+  --cream2:#e8e2d6;
+  --cream3:#c8c0b0;
+  --gold:#c9a84c;
+  --gold2:#a8882e;
+  --gold3:#f0e6c8;
+  --teal:#2d6e6a;
+  --teal2:#1e4e4b;
+  --teal3:#e3f0ef;
+  --line:rgba(242,237,228,0.08);
+  --line2:rgba(242,237,228,0.15);
+}
+
+html{scroll-behavior:smooth}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--ink);
+  color:var(--cream);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.9rem 2.5rem;
+  background:rgba(14,13,11,0.85);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line);
+  transition:padding .3s;
+}
+.nav-brand{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.15rem;font-weight:500;
+  color:var(--cream);letter-spacing:.01em;
+}
+.nav-brand span{color:var(--gold)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{
+  text-decoration:none;font-size:.82rem;font-weight:400;
+  color:var(--cream3);letter-spacing:.02em;
+  transition:color .2s;
+}
+.nav-links a:hover{color:var(--cream)}
+.nav-cta{
+  background:var(--gold);color:var(--ink) !important;
+  padding:.45rem 1.2rem;border-radius:100px;
+  font-size:.82rem !important;font-weight:500 !important;
+  transition:background .2s !important;white-space:nowrap;
+}
+.nav-cta:hover{background:var(--gold2) !important}
+
+/* ── HERO ── */
+#hero{
+  min-height:100vh;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:0;
+  padding-top:5rem;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero-left{
+  padding:5rem 3rem 5rem 2.5rem;
+  max-width:600px;
+}
+
+.hero-location{
+  display:inline-flex;align-items:center;gap:.4rem;
+  font-size:.72rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:2rem;
+  opacity:0;animation:fadeUp .6s .1s ease forwards;
+}
+.hero-location::before{
+  content:'';width:6px;height:6px;border-radius:50%;
+  background:var(--gold);flex-shrink:0;
+  box-shadow:0 0 8px var(--gold);
+}
+
+.hero-headline{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(3rem,5vw,5rem);
+  font-weight:300;
+  line-height:1.05;
+  letter-spacing:-.02em;
+  color:var(--cream);
+  margin-bottom:0;
+}
+.hero-headline .line{
+  display:block;
+  opacity:0;
+  transform:translateY(24px);
+  transition:opacity .6s ease, transform .6s ease;
+}
+.hero-headline .line.visible{opacity:1;transform:translateY(0)}
+.hero-headline em{
+  font-style:italic;
+  color:var(--gold);
+}
+.hero-headline .en{
+  color:var(--teal);
+  font-style:italic;
+}
+
+.hero-divider{
+  width:40px;height:1px;
+  background:var(--gold);
+  margin:2rem 0;
+  opacity:0;animation:fadeUp .6s .9s ease forwards;
+}
+
+.hero-sub{
+  font-size:1rem;font-weight:300;
+  color:var(--cream3);line-height:1.7;
+  max-width:440px;
+  opacity:0;animation:fadeUp .6s 1s ease forwards;
+}
+.hero-proof{
+display:flex;
+flex-wrap:wrap;
+gap:.75rem;
+margin-top:1.5rem;
+}
+
+.hero-proof span{
+font-size:.78rem;
+color:var(--cream3);
+border:1px solid var(--line2);
+padding:.45rem .8rem;
+border-radius:100px;
+background:rgba(255,255,255,0.03);
+}
+
+
+.hero-actions{
+  display:flex;align-items:center;gap:1.25rem;
+  margin-top:2.5rem;flex-wrap:wrap;
+  opacity:0;animation:fadeUp .6s 1.1s ease forwards;
+}
+
+.btn-primary{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:var(--gold);color:var(--ink);
+  font-weight:500;font-size:.9rem;
+  padding:.85rem 1.75rem;border-radius:100px;
+  text-decoration:none;transition:all .25s;
+  white-space:nowrap;
+}
+.btn-primary:hover{background:var(--gold2);transform:translateY(-1px)}
+.btn-primary svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s}
+.btn-primary:hover svg{transform:translateX(3px)}
+
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:.4rem;
+  color:var(--cream3);font-size:.85rem;font-weight:400;
+  text-decoration:none;border-bottom:1px solid var(--line2);
+  padding-bottom:1px;transition:color .2s,border-color .2s;
+}
+.btn-ghost:hover{color:var(--cream);border-color:var(--cream3)}
+
+/* hero right — photo */
+.hero-right{
+  position:relative;
+  height:100vh;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:5rem 2.5rem 3rem 1rem;
+}
+.hero-img{
+  width:auto;
+  max-width:88%;
+  max-height:78vh;
+  object-fit:contain;
+  object-position:center top;
+  border-radius:20px;
+  filter:brightness(.88) contrast(1.04);
+  opacity:0;animation:fadeIn 1s .3s ease forwards;
+  position:relative;z-index:1;
+  box-shadow:0 32px 80px rgba(0,0,0,.55);
+}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to right, var(--ink) 0%, rgba(14,13,11,.15) 35%),
+             linear-gradient(to top, var(--ink) 0%, transparent 25%);
+}
+.hero-credential{
+  position:absolute;bottom:2.5rem;right:2rem;
+  background:rgba(14,13,11,.85);
+  border:1px solid var(--line2);
+  backdrop-filter:blur(12px);
+  border-radius:12px;
+  padding:.75rem 1.1rem;
+  font-size:.75rem;color:var(--cream3);
+  line-height:1.5;
+  opacity:0;animation:fadeUp .6s 1.2s ease forwards;
+}
+.hero-credential strong{color:var(--gold);display:block;font-size:.8rem;font-weight:500;margin-bottom:.2rem}
+
+/* ── TRUST BAR ── */
+.trust-bar{
+  background:var(--ink2);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  padding:1.25rem 2.5rem;
+}
+.trust-inner{
+  max-width:1100px;margin:0 auto;
+  display:flex;align-items:center;justify-content:center;
+  gap:2.5rem;flex-wrap:wrap;
+}
+.trust-item{
+  display:flex;align-items:center;gap:.6rem;
+  font-size:.8rem;font-weight:400;color:var(--cream3);
+  white-space:nowrap;
+}
+.trust-item svg{width:15px;height:15px;stroke:var(--gold);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.trust-stars{color:var(--gold);font-size:.85rem;letter-spacing:.05em}
+.trust-sep{width:1px;height:20px;background:var(--line2)}
+
+/* ── SECTIONS ── */
+section{padding:6rem 2.5rem;max-width:1100px;margin:0 auto}
+section.full{max-width:100%;padding-left:0;padding-right:0}
+.sec-inner{max-width:1100px;margin:0 auto;padding:0 2.5rem}
+
+.label{
+  font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:.75rem;
+}
+.sec-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2rem,3.5vw,3rem);
+  font-weight:300;line-height:1.12;
+  letter-spacing:-.02em;color:var(--cream);
+  max-width:640px;
+}
+.sec-title em{font-style:italic;color:var(--gold)}
+.sec-desc{
+  font-size:.95rem;font-weight:300;
+  color:var(--cream3);max-width:480px;
+  margin-top:1rem;line-height:1.75;
+}
+
+/* ── REVEAL ── */
+.reveal{
+  opacity:0;transform:translateY(20px);
+  transition:opacity .65s ease,transform .65s ease;
+}
+.reveal.on{opacity:1;transform:translateY(0)}
+
+/* ── IDENTIFICATION ── */
+#ident{background:var(--ink2);padding:5rem 2.5rem}
+#ident .inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+
+.ident-list{list-style:none;margin-top:2rem;display:flex;flex-direction:column;gap:0}
+.ident-item{
+  display:flex;align-items:flex-start;gap:1rem;
+  padding:1.25rem 0;border-bottom:1px solid var(--line);
+  opacity:0;transform:translateX(-16px);
+  transition:opacity .5s ease,transform .5s ease;
+}
+.ident-item.on{opacity:1;transform:translateX(0)}
+.ident-item:last-child{border-bottom:none}
+.ident-icon{
+  width:32px;height:32px;border-radius:8px;
+  background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.2);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;
+}
+.ident-icon svg{width:15px;height:15px;stroke:var(--gold);fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+.ident-text{font-size:.9rem;font-weight:300;color:var(--cream3);line-height:1.6}
+.ident-text strong{color:var(--cream);font-weight:500}
+
+.ident-right{position:relative}
+.ident-quote{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.6rem,2.5vw,2.2rem);
+  font-weight:300;font-style:italic;
+  color:var(--cream);line-height:1.4;
+  letter-spacing:-.01em;
+}
+.ident-quote em{color:var(--gold);font-style:normal}
+.ident-author{
+  margin-top:1.5rem;font-size:.8rem;
+  color:var(--cream3);font-weight:400;letter-spacing:.03em;
+}
+
+/* ── METHOD ── */
+#method{background:var(--ink)}
+.method-grid{
+  margin-top:3.5rem;
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:16px;overflow:hidden;
+}
+.method-card{
+  background:var(--ink);padding:2rem 1.75rem;
+  transition:background .25s;cursor:default;
+}
+.method-card:hover{background:var(--ink2)}
+.method-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:3.5rem;font-weight:300;
+  color:rgba(242,237,228,.06);
+  line-height:1;margin-bottom:1rem;
+  letter-spacing:-.04em;
+}
+.method-title{font-weight:500;font-size:.9rem;color:var(--cream);margin-bottom:.5rem}
+.method-desc{font-size:.82rem;font-weight:300;color:var(--cream3);line-height:1.65}
+
+/* ── PROOF — DEPOIMENTOS ── */
+#proof{background:var(--ink2);padding:6rem 2.5rem}
+#proof .inner{max-width:1100px;margin:0 auto}
+
+.proof-grid{
+  margin-top:3rem;
+  display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;
+}
+.proof-card{
+  background:var(--ink);border:1px solid var(--line2);
+  border-radius:16px;padding:1.75rem;
+  transition:border-color .25s;
+}
+.proof-card:hover{border-color:rgba(201,168,76,.25)}
+.proof-card.featured{
+  border-color:rgba(201,168,76,.3);
+  background:rgba(201,168,76,.04);
+}
+.proof-stars{color:var(--gold);font-size:.9rem;letter-spacing:.06em;margin-bottom:1rem}
+.proof-text{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.1rem;font-weight:300;font-style:italic;
+  color:var(--cream);line-height:1.6;letter-spacing:-.01em;
+  margin-bottom:1.25rem;
+}
+.proof-name{font-size:.78rem;font-weight:500;color:var(--cream3);letter-spacing:.04em;text-transform:uppercase}
+
+/* ── ABOUT ── */
+#about{background:var(--ink);padding:6rem 2.5rem}
+#about .inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+
+.about-img-wrap{position:relative}
+.about-img{
+  width:100%;border-radius:16px;
+  display:block;
+  box-shadow:0 24px 60px rgba(0,0,0,.4);
+}
+.about-badge{
+  position:absolute;bottom:-1rem;right:-1rem;
+  background:var(--gold);color:var(--ink);
+  border-radius:12px;padding:.75rem 1.1rem;
+  font-size:.75rem;font-weight:500;line-height:1.4;
+  max-width:170px;text-align:center;
+}
+.about-badge strong{display:block;font-size:1.1rem;font-weight:600;margin-bottom:.1rem}
+
+.about-text p{
+  font-size:.95rem;font-weight:300;color:var(--cream3);
+  line-height:1.8;margin-bottom:1.25rem;
+}
+.about-text p:last-child{margin-bottom:0}
+.about-text strong{color:var(--cream);font-weight:500}
+
+/* ── LEVELS ── */
+#levels{
+  background:var(--ink2);
+  padding:5rem 2.5rem;
+}
+#levels .inner{max-width:1100px;margin:0 auto}
+
+.levels-row{
+  display:grid;grid-template-columns:auto 1fr auto;
+  align-items:center;gap:2rem;
+  padding:1.5rem 0;border-bottom:1px solid var(--line);
+  opacity:0;transform:translateX(-20px);
+  transition:opacity .5s ease,transform .5s ease;
+}
+.levels-row.on{opacity:1;transform:translateX(0)}
+.levels-row:last-child{border-bottom:none}
+.level-dot{
+  width:10px;height:10px;border-radius:50%;
+  border:1px solid rgba(201,168,76,.3);
+  flex-shrink:0;
+}
+.levels-row:hover .level-dot{background:var(--gold);border-color:var(--gold)}
+.level-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.3rem;font-weight:300;color:var(--cream);
+}
+.level-desc{font-size:.82rem;font-weight:300;color:var(--cream3);margin-top:.2rem;line-height:1.5}
+.level-tag{
+  font-size:.7rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;
+  padding:.3rem .8rem;border-radius:100px;white-space:nowrap;
+}
+.tag-open{background:rgba(45,110,106,.2);color:#7ecbc7;border:1px solid rgba(45,110,106,.3)}
+.tag-gold{background:rgba(201,168,76,.15);color:var(--gold);border:1px solid rgba(201,168,76,.2)}
+
+/* ── CLOSING CTA ── */
+#closing{
+  background:var(--ink2);
+  border-top:1px solid var(--line);
+  padding:7rem 2.5rem;text-align:center;
+}
+#closing .inner{max-width:680px;margin:0 auto}
+
+.closing-eyebrow{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:2rem;
+}
+.closing-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.5rem,5vw,4rem);
+  font-weight:300;line-height:1.1;
+  letter-spacing:-.025em;color:var(--cream);
+  margin-bottom:1.5rem;
+}
+.closing-title em{font-style:italic;color:var(--gold)}
+.closing-sub{
+  font-size:.95rem;font-weight:300;color:var(--cream3);
+  line-height:1.75;margin-bottom:2.5rem;max-width:480px;margin-left:auto;margin-right:auto;
+}
+.closing-steps{
+  display:flex;align-items:center;justify-content:center;
+  gap:1rem;margin-bottom:3rem;flex-wrap:wrap;
+}
+.cstep{
+  display:flex;align-items:center;gap:.6rem;
+  font-size:.8rem;color:var(--cream3);
+}
+.cstep-num{
+  width:22px;height:22px;border-radius:50%;
+  border:1px solid var(--gold);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.68rem;font-weight:500;color:var(--gold);flex-shrink:0;
+}
+.cstep-arrow{color:var(--line2);font-size:.8rem}
+
+.btn-large{
+  display:inline-flex;align-items:center;gap:.65rem;
+  background:var(--gold);color:var(--ink);
+  font-weight:500;font-size:1rem;
+  padding:1.1rem 2.25rem;border-radius:100px;
+  text-decoration:none;transition:all .25s;
+}
+.btn-large:hover{background:var(--gold2);transform:translateY(-2px)}
+.btn-large svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s}
+.btn-large:hover svg{transform:translateX(4px)}
+.closing-note{margin-top:1.25rem;font-size:.78rem;color:var(--cream3);opacity:.6}
+
+/* ── WHATSAPP FLOAT ── */
+.wa-float{
+  position:fixed;bottom:1.75rem;right:1.75rem;z-index:300;
+  display:flex;align-items:center;gap:.65rem;
+  background:#25d366;color:#fff;
+  font-size:.82rem;font-weight:500;
+  padding:.7rem 1.2rem .7rem .9rem;
+  border-radius:100px;text-decoration:none;
+  box-shadow:0 4px 20px rgba(37,211,102,.35);
+  transition:all .25s;
+  opacity:0;animation:fadeUp .6s 1.5s ease forwards;
+}
+.wa-float:hover{transform:translateY(-2px);box-shadow:0 6px 28px rgba(37,211,102,.45)}
+.wa-float svg{width:18px;height:18px;fill:white;flex-shrink:0}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--ink);border-top:1px solid var(--line);
+  padding:2rem 2.5rem;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.footer-brand{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1rem;color:rgba(242,237,228,.3);
+}
+.footer-brand span{color:var(--gold)}
+.footer-note{font-size:.75rem;color:rgba(242,237,228,.2);font-weight:300}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  nav{padding:.9rem 1.5rem}
+  .nav-links{display:none}
+  #hero{grid-template-columns:1fr;min-height:auto}
+  .hero-left{padding:7rem 1.5rem 3rem;max-width:100%}
+  .hero-right{height:55vw;max-height:380px}
+  #ident .inner,#about .inner{grid-template-columns:1fr;gap:3rem}
+  .proof-grid{grid-template-columns:1fr}
+  .method-grid{grid-template-columns:1fr}
+  section{padding:4rem 1.5rem}
+  #proof,#about,#levels,#closing{padding:4rem 1.5rem}
+  #ident{padding:4rem 1.5rem}
+  footer{flex-direction:column;gap:.75rem;text-align:center}
+  .about-badge{right:0;bottom:-1.5rem}
+  .trust-inner{gap:1.25rem}
+  .trust-sep{display:none}
+  .closing-steps{flex-direction:column;align-items:flex-start;max-width:260px;margin-left:auto;margin-right:auto}
+  .cstep-arrow{display:none}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation:none !important;transition:none !important}
+  .hero-headline .line,.ident-item,.levels-row,.reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">Michael Fonseca <span>·</span> Professor de Inglês</div>
+  <ul class="nav-links">
+    <li><a href="#ident">Para quem</a></li>
+    <li><a href="#method">Método</a></li>
+    <li><a href="#proof">Alunos</a></li>
+    <li><a href="#about">Michael</a></li>
+    <li><a href="https://wa.me/5531983425878?text=Ol%C3%A1%20Michael%2C%20quero%20agendar%20minha%20aula%20experimental%20gratuita!" class="nav-cta" target="_blank" rel="noopener">Aula gratuita</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero" style="padding:0;max-width:100%">
+  <div class="hero-left">
+    <div class="hero-location">Belo Horizonte · Contagem · Online</div>
+
+    <h1 class="hero-headline">
+      <span class="line">Se você não fala <em>Inglês.</em></span>
+      <span class="line">Alguem fala por</span>
+      <span class="line"><em>você.</em></span>
+    </h1>
+
+    <div class="hero-divider"></div>
+
+    <p class="hero-sub">
+      Professor particular de inglês com mais de 10 anos de experiência. Atendo do iniciante absoluto a quem já tem base mas trava na hora de falar — com método real, acompanhamento e resultado desde a primeira aula.
+    </p>
+
+    <div class="hero-actions">
+      <a href="https://wa.me/5531983425878?text=Ol%C3%A1%20Michael%2C%20quero%20agendar%20minha%20aula%20experimental%20gratuita!" class="btn-primary" target="_blank" rel="noopener">
+        Agendar aula experimental gratuita
+
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#proof" class="btn-ghost">Veja resultados dos alunos</a>
+    </div>
+  </div>
+
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <span class="trust-stars">★★★★★</span>
+      <span>5,0 no Google</span>
+    </div>
+    <div class="trust-sep"></div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+      31 avaliações
+    </div>
+    <div class="trust-sep"></div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      +10 anos de experiência
+    </div>
+    <div class="trust-sep"></div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      BH · Contagem · Online para todo o Brasil
+    </div>
+  </div>
+</div>
+
+<!-- IDENTIFICAÇÃO -->
+<section id="ident" style="padding:5rem 2.5rem;max-width:100%;background:var(--ink2)">
+  <div class="inner" style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center">
+    <div>
+      <p class="label reveal">Esse método foi feito para você?</p>
+      <h2 class="sec-title reveal">Se você se reconhece em <em>alguma</em> dessas situações</h2>
+      <ul class="ident-list">
+        <li class="ident-item">
+          <div class="ident-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+          <div class="ident-text"><strong>Entende inglês, mas trava ao falar.</strong> A palavra está na cabeça — mas na hora H, não sai.</div>
+        </li>
+        <li class="ident-item">
+          <div class="ident-icon"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zM12 6v6l4 2"/></svg></div>
+          <div class="ident-text"><strong>Está começando do zero.</strong> Nunca estudou de verdade, ou estudou há muito tempo. Não importa — a gente começa de onde você está.</div>
+        </li>
+        <li class="ident-item">
+          <div class="ident-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+          <div class="ident-text"><strong>Precisa do inglês para o trabalho.</strong> Reuniões, e-mails, entrevistas internacionais — e a insegurança atrapalha.</div>
+        </li>
+        <li class="ident-item">
+          <div class="ident-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <div class="ident-text"><strong>Quer rotina sustentável, não mais um curso.</strong> Sem metodologia genérica, sem sala de aula — só o que funciona para adultos.</div>
+        </li>
+      </ul>
+    </div>
+    <div class="ident-right reveal">
+      <p class="ident-quote">
+        "Depois de anos ensinando, percebi que a maioria dos adultos não precisava de mais conteúdo. Precisava de alguém que os <em>acompanhasse de verdade</em>."
+      </p>
+      <p class="ident-author">— Michael Fonseca, professor e intérprete</p>
+      <div style="margin-top:2.5rem;padding:1.5rem;background:var(--ink);border:1px solid var(--line2);border-radius:12px;">
+        <p style="font-size:.82rem;font-weight:300;color:var(--cream3);line-height:1.7">Atendo adultos em <strong style="color:var(--cream);font-weight:500">qualquer nível</strong> — do iniciante absoluto a quem já tem base e quer destravar. Aulas presenciais em BH e Contagem, e online para todo o Brasil.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METHOD -->
+<section id="method">
+  <p class="label reveal">Como funciona na prática</p>
+  <h2 class="sec-title reveal">Um método construído para <em>adultos ocupados</em></h2>
+  <p class="sec-desc reveal">Cada elemento tem um propósito: fazer você falar inglês com confiança em situações reais — sem transformar isso em uma segunda faculdade.</p>
+
+  <div class="method-grid reveal">
+    <div class="method-card">
+      <div class="method-num">01</div>
+      <p class="method-title">Aulas semanais de conversação</p>
+      <p class="method-desc">60 minutos focados em fala real. Feedback direto, inglês aplicado ao seu contexto — trabalho, viagem ou vida cotidiana.</p>
+    </div>
+    <div class="method-card">
+      <div class="method-num">02</div>
+      <p class="method-title">Speaking tasks durante a semana</p>
+      <p class="method-desc">Pequenos contatos com o inglês entre as aulas. Você não chega na próxima sessão sentindo que esqueceu tudo.</p>
+    </div>
+    <div class="method-card">
+      <div class="method-num">03</div>
+      <p class="method-title">Suporte via WhatsApp</p>
+      <p class="method-desc">Dúvidas não esperam a próxima aula. Acompanhamento assíncrono real — dentro da sua rotina, não fora dela.</p>
+    </div>
+    <div class="method-card">
+      <div class="method-num">04</div>
+      <p class="method-title">Plano personalizado</p>
+      <p class="method-desc">Nada genérico. Seu nível, seus objetivos, seu ritmo. A partir do diagnóstico inicial, cada aula tem uma direção clara.</p>
+    </div>
+    <div class="method-card">
+      <div class="method-num">05</div>
+      <p class="method-title">Acompanhamento de progresso</p>
+      <p class="method-desc">Você sempre sabe onde está e para onde vai. Sem achismo — evolução registrada e mensurável.</p>
+    </div>
+    <div class="method-card">
+      <div class="method-num">06</div>
+      <p class="method-title">Preparatório certificações</p>
+      <p class="method-desc">TOEFL, IELTS, TOEIC e Cambridge — quando o objetivo tem data e prova, o método se adapta.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section id="proof" style="background:var(--ink2);padding:6rem 2.5rem;max-width:100%">
+  <div class="inner" style="max-width:1100px;margin:0 auto">
+    <p class="label reveal">O que dizem os alunos</p>
+    <h2 class="sec-title reveal">Resultados <em>reais</em>, em palavras deles</h2>
+
+    <div class="proof-grid" style="margin-top:3rem">
+      <div class="proof-card featured reveal">
+        <div class="proof-stars">★★★★★</div>
+        <p class="proof-text">"Quando percebi, já estava falando frases que antes travava muito. Respeita o meu ritmo e explica muito bem. Sou muito grata e recomendo o seu trabalho."</p>
+        <p class="proof-name">Maria Clara Avelar Santos</p>
+      </div>
+      <div class="proof-card featured reveal">
+        <div class="proof-stars">★★★★★</div>
+        <p class="proof-text">"O Professor Michael mudou completamente essa perspectiva. Ele cria um ambiente seguro onde não temos medo de errar. Se você busca alguém que realmente se importa com o seu progresso, ele é a escolha certa."</p>
+        <p class="proof-name">Gabriel Felipe</p>
+      </div>
+      <div class="proof-card reveal">
+        <div class="proof-stars">★★★★★</div>
+        <p class="proof-text">"Professor super dedicado, ótima didática e muito profissional. Suas aulas são muito produtivas e você consegue aprender muito bem. Estou muito satisfeita com meu desenvolvimento."</p>
+        <p class="proof-name">Viviane Stefani De Oliveira Santos</p>
+      </div>
+      <div class="proof-card reveal">
+        <div class="proof-stars">★★★★★</div>
+        <p class="proof-text">"O Professor Michael é um excelente professor, dedicado, paciente e extremamente competente. Realmente se importa com o progresso dos alunos. Sem dúvida, um dos melhores."</p>
+        <p class="proof-name">Thales Gomes · Local Guide</p>
+      </div>
+    </div>
+
+    <div style="margin-top:2.5rem;text-align:center" class="reveal">
+      <p style="font-size:.82rem;color:var(--cream3);font-weight:300">
+        <span style="color:var(--gold)">★★★★★</span> &nbsp;5,0 · 31 avaliações no Google
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" style="background:var(--ink);padding:6rem 2.5rem;max-width:100%">
+  <div class="inner" style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1.4fr;gap:5rem;align-items:center">
+    <div class="about-img-wrap reveal">
+      <!-- Substitua pelo src da sua foto de interpretação ou aula -->
+      <img class="about-img" src="https://i.ibb.co/Qv3w1VyF/about.png" alt="Michael interpretando em um evento internacional">
+      <div class="about-badge">
+        <strong>10+</strong>
+        anos de experiência<br>como professor e intérprete
+      </div>
+    </div>
+    <div class="about-text">
+      <p class="label reveal">Resultado real de um aluno</p>
+      <h2 class="sec-title reveal" style="margin-bottom:1.5rem">Professor, intérprete, <em>e alguém que realmente aparece</em></h2>
+      <div class="reveal">
+        <p>Sou professor particular de inglês em Belo Horizonte e Contagem há mais de 10 anos. Atuo também como <strong>intérprete internacional</strong> — o que significa que uso inglês em situações reais de alto nível todos os dias, não só em sala de aula.</p>
+        <p>Falo isso porque faz diferença. Você não aprende com alguém que só ensina teoria — você aprende com alguém que vive o idioma e sabe exatamente o que é necessário para se comunicar de verdade.</p>
+        <p>Meu método nasceu de uma observação simples: <strong>adultos não precisam de mais conteúdo. Precisam de prática guiada, acompanhamento e consistência.</strong> É isso que eu ofereço.</p>
+        <p>Atendo do iniciante absoluto a profissionais que precisam do inglês para entrevistas, reuniões e certificações internacionais.</p>
+      </div>
+      <div style="margin-top:2rem" class="reveal">
+        <a href="https://wa.me/5531983425878?text=Ol%C3%A1%20Michael%2C%20quero%20agendar%20minha%20aula%20experimental%20gratuita!" class="btn-primary" target="_blank" rel="noopener" style="display:inline-flex">
+          Falar com Michael
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEVELS -->
+<section id="levels" style="background:var(--ink2);padding:5rem 2.5rem;max-width:100%">
+  <div class="inner" style="max-width:1100px;margin:0 auto">
+    <p class="label reveal">Quem eu atendo</p>
+    <h2 class="sec-title reveal">Do <em>zero absoluto</em> ao avançado</h2>
+    <p class="sec-desc reveal">Não importa onde você está hoje. O que importa é para onde você quer ir.</p>
+
+    <div style="margin-top:3rem">
+      <div class="levels-row">
+        <div class="level-dot"></div>
+        <div><p class="level-name">Iniciante absoluto</p><p class="level-desc">Nunca estudou, ou faz tanto tempo que parece que nunca estudou. Começa do zero, sem julgamento.</p></div>
+        <span class="level-tag tag-open">3 vagas</span>
+      </div>
+      <div class="levels-row">
+        <div class="level-dot"></div>
+        <div><p class="level-name">Básico / Intermediário</p><p class="level-desc">Sabe algumas coisas, mas sente que não avança. Estrutura e prática real mudam esse quadro rápido.</p></div>
+        <span class="level-tag tag-open">3 vagas</span>
+      </div>
+      <div class="levels-row">
+        <div class="level-dot"></div>
+        <div><p class="level-name">Intermediário — trava ao falar</p><p class="level-desc">Entende bem, lê bem, escreve bem. Mas na hora de falar, trava. Esse é o caso mais comum — e tem solução.</p></div>
+        <span class="level-tag tag-gold">1 vaga</span>
+      </div>
+      <div class="levels-row">
+        <div class="level-dot"></div>
+        <div><p class="level-name">Avançado + certificações</p><p class="level-desc">TOEFL, IELTS, TOEIC, Cambridge — preparação específica com método focado em resultado.</p></div>
+        <span class="level-tag tag-open">3 vagas</span>
+      </div>
+      <div class="levels-row">
+        <div class="level-dot"></div>
+        <div><p class="level-name">Business English</p><p class="level-desc">Inglês para reuniões, apresentações, e-mails e entrevistas internacionais — com foco direto no seu contexto profissional.</p></div>
+        <span class="level-tag tag-gold">2 vagas</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section id="closing" style="max-width:100%">
+  <div style="max-width:680px;margin:0 auto;text-align:center">
+    <p class="closing-eyebrow reveal">Próximo passo</p>
+    <h2 class="closing-title reveal">O começo é <em>uma conversa.</em></h2>
+    <p class="closing-sub reveal">Sem processo complicado. Você agenda a aula experimental gratuita, a gente conversa sobre onde você está e para onde quer ir — e você decide se quer continuar.</p>
+
+    <div class="closing-steps reveal">
+      <div class="cstep"><div class="cstep-num">1</div><span>Diagnóstico gratuito</span></div>
+      <div class="cstep-arrow">→</div>
+      <div class="cstep"><div class="cstep-num">2</div><span>Seu plano personalizado</span></div>
+      <div class="cstep-arrow">→</div>
+      <div class="cstep"><div class="cstep-num">3</div><span>Primeira aula</span></div>
+    </div>
+
+    <div class="reveal">
+      <a href="https://wa.me/5531983425878?text=Ol%C3%A1%20Michael%2C%20quero%20agendar%20minha%20aula%20experimental%20gratuita!" class="btn-large" target="_blank" rel="noopener">
+        Agendar aula experimental gratuita
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <p class="closing-note">Sem compromisso · Totalmente gratuita · Resposta em minutos</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Michael Fonseca <span>·</span> Professor de Inglês</div>
+  <p class="footer-note">BH · Contagem · Online para todo o Brasil</p>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/5531983425878?text=Ol%C3%A1%20Michael%2C%20quero%20agendar%20minha%20aula%20experimental%20gratuita!" class="wa-float" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  Aula gratuita
+</a>
+
+<script>
+// Headline lines stagger
+(function(){
+  const lines = document.querySelectorAll('.hero-headline .line');
+  lines.forEach((l,i)=>{
+    setTimeout(()=>l.classList.add('visible'), 400 + i*220);
+  });
+})();
+
+// Scroll reveal
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting) e.target.classList.add('on');
+  });
+},{threshold:0.1});
+
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// Ident items stagger
+const identObs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const items = e.target.querySelectorAll('.ident-item');
+      items.forEach((item,i)=>setTimeout(()=>item.classList.add('on'),i*120));
+    }
+  });
+},{threshold:0.1});
+const identList = document.querySelector('.ident-list');
+if(identList) identObs.observe(identList);
+
+// Levels stagger
+const levObs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const rows = e.target.querySelectorAll('.levels-row');
+      rows.forEach((r,i)=>setTimeout(()=>r.classList.add('on'),i*100));
+    }
+  });
+},{threshold:0.1});
+const levWrap = document.querySelector('#levels .inner');
+if(levWrap) levObs.observe(levWrap);
+</script>
+<script>
+document.querySelectorAll('a[href*="wa.me"]').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    if (typeof gtag === 'function') {
+      gtag('event', 'whatsapp_click');
+    }
+  });
+});
+</script>
+</body>
+</html>
