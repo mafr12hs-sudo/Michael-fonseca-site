@@ -216,9 +216,12 @@ background:rgba(255,255,255,0.03);
   object-position:center top;
   border-radius:20px;
   filter:brightness(.88) contrast(1.04);
-  opacity:0;animation:fadeIn 1s .3s ease forwards;
-  position:relative;z-index:1;
+  position:absolute;z-index:1;
   box-shadow:0 32px 80px rgba(0,0,0,.55);
+  opacity:0;
+  transition:opacity 1.2s ease;
+}
+.hero-img.active{opacity:1}
 }
 .hero-overlay{
   position:absolute;inset:0;
@@ -568,6 +571,13 @@ footer{
 <!-- HERO -->
 <section id="hero" style="padding:0;max-width:100%">
   <div class="hero-left">
+    <div class="hero-right">
+  <div class="hero-overlay"></div>
+  <img class="hero-img active" src="https://i.ibb.co/DDDNxVrQ/essa.png" alt="Michael interpretando em evento internacional">
+  <img class="hero-img" src="https://i.ibb.co/wFwCQ81b/Google-reviews.png" alt="Avaliações 5 estrelas no Google">
+  <img class="hero-img" src="https://i.ibb.co/bg7sHXJM/review-2.png" alt="Depoimento de aluno">
+  <div class="hero-credential"><strong>10+ anos</strong>Professor e intérprete</div>
+</div>
     <div class="hero-location">Belo Horizonte · Contagem · Online · Vagas limitadas este mês</div>
 
     <h1 class="hero-headline">
@@ -868,6 +878,18 @@ footer{
 </a>
 
 <script>
+
+  // Hero image crossfade
+(function(){
+  const imgs = document.querySelectorAll('.hero-img');
+  if(imgs.length < 2) return;
+  let i = 0;
+  setInterval(()=>{
+    imgs[i].classList.remove('active');
+    i = (i + 1) % imgs.length;
+    imgs[i].classList.add('active');
+  }, 4000); // troca a cada 4 segundos
+})();
 // Headline lines stagger
 (function(){
   const lines = document.querySelectorAll('.hero-headline .line');
