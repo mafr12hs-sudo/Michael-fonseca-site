@@ -3,34 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Google Analytics (GA4) -->
-  <!-- Consent Mode (LGPD) + Google Analytics -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-
-    gtag('consent', 'default', {
-      'ad_storage': 'denied',
-      'ad_user_data': 'denied',
-      'ad_personalization': 'denied',
-      'analytics_storage': 'denied',
-      'wait_for_update': 500
+ <!-- Consent Mode (LGPD) + Google Analytics (GA4) -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  'ad_storage': 'denied',
+  'ad_user_data': 'denied',
+  'ad_personalization': 'denied',
+  'analytics_storage': 'denied',
+  'wait_for_update': 500
+});
+try {
+  if (localStorage.getItem('mf_consent') === 'granted') {
+    gtag('consent', 'update', {
+      'ad_storage':'granted','ad_user_data':'granted',
+      'ad_personalization':'granted','analytics_storage':'granted'
     });
-
-    try{
-      if(localStorage.getItem('mf_consent') === 'granted'){
-        gtag('consent', 'update', {
-          'ad_storage':'granted','ad_user_data':'granted',
-          'ad_personalization':'granted','analytics_storage':'granted'
-        });
-      }
-    }catch(e){}
-  </script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C9TLLH9YDH"></script>
-  <script>
-    gtag('js', new Date());
-    gtag('config', 'G-C9TLLH9YDH');
-  </script>
+  }
+} catch(e){}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C9TLLH9YDH"></script>
+<script>
+gtag('js', new Date());
+gtag('config', 'G-C9TLLH9YDH');
+</script>
 <!-- ===== SEO BÁSICO ===== -->
   <title>Professor Particular de Inglês para Adultos | Michael Fonseca</title>
   <meta name="description" content="Aulas particulares de inglês online para adultos. Plano feito pro seu objetivo e acompanhamento do início ao fim. Agende uma conversa gratuita de 30 minutos.">
@@ -1244,6 +1241,37 @@ section {
     });
   });
 })();
+</script>
+  <!-- LGPD Cookie Banner -->
+<div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:rgba(14,13,11,0.97);border-top:1px solid rgba(242,237,228,0.12);padding:1rem 2rem;backdrop-filter:blur(16px)">
+  <div style="max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap">
+    <p style="font-size:.82rem;color:#c8c0b0;line-height:1.6;margin:0;max-width:600px">
+      Este site usa cookies para análise de tráfego e melhoria da experiência. Ao aceitar, você concorda com o uso de cookies conforme a LGPD.
+    </p>
+    <div style="display:flex;gap:.75rem;flex-shrink:0">
+      <button onclick="mfConsent('granted')" style="background:#c9a84c;color:#0e0d0b;border:none;padding:.5rem 1.2rem;border-radius:100px;font-size:.8rem;font-weight:500;cursor:pointer">Aceitar</button>
+      <button onclick="mfConsent('denied')" style="background:transparent;color:#c8c0b0;border:1px solid rgba(242,237,228,0.15);padding:.5rem 1.2rem;border-radius:100px;font-size:.8rem;cursor:pointer">Recusar</button>
+    </div>
+  </div>
+</div>
+<script>
+function mfConsent(choice) {
+  try { localStorage.setItem('mf_consent', choice); } catch(e){}
+  if (choice === 'granted') {
+    gtag('consent', 'update', {
+      'ad_storage':'granted','ad_user_data':'granted',
+      'ad_personalization':'granted','analytics_storage':'granted'
+    });
+  }
+  document.getElementById('cookieBanner').style.display = 'none';
+}
+try {
+  if (!localStorage.getItem('mf_consent')) {
+    document.getElementById('cookieBanner').style.display = 'block';
+  }
+} catch(e){
+  document.getElementById('cookieBanner').style.display = 'block';
+}
 </script>
 
 </body>
